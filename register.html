@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Mindhail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Registration Form -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Create Your Account</h2>
+      
+      <!-- Registration Notice -->
+      <div class="mb-6 p-4 bg-blue-50 rounded-md border border-blue-200">
+        <h3 class="text-sm font-medium text-blue-800 mb-2">Account Registration</h3>
+        <p class="text-sm text-blue-700">
+          This form is for individual accounts only. Corporate users and therapists should use the login page with credentials provided by your organization.
+        </p>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="registerForm" class="space-y-4">
+        <!-- Common Fields -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <input type="text" id="name" required
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+          <input type="email" id="email" required
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" id="password" required minlength="8"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+          <p class="mt-1 text-xs text-gray-500">Minimum 8 characters</p>
+        </div>
+
+        <div>
+          <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+          <input type="password" id="confirmPassword" required minlength="8"
+            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <div id="passwordError" class="text-red-500 text-sm hidden">Passwords do not match</div>
+
+        <!-- Hidden role field for individual users -->
+        <input type="hidden" name="role" value="individual">
+        
+        <div class="flex items-center">
+          <input id="terms" name="terms" type="checkbox" required
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+          <label for="terms" class="ml-2 block text-sm text-gray-700">
+            I agree to the <a href="#" class="text-blue-600 hover:text-blue-500">Terms of Service</a> and <a href="#" class="text-blue-600 hover:text-blue-500">Privacy Policy</a>
+          </label>
+        </div>
+        
+        <button type="submit"
+          class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          Create Account
+        </button>
+        
+        <p class="text-center text-sm text-gray-600">
+          Already have an account? <a href="login.html" class="text-blue-600 hover:text-blue-500">Sign in</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+  
+  <!-- Load Templates -->
+  <script src="template-loader.js"></script>
+  
+  <!-- Page-specific scripts -->
+  <script>
+    // Add back button after header loads
+    document.addEventListener('DOMContentLoaded', () => {
+      const headerContainer = document.querySelector('header .container');
+      if (headerContainer) {
+        const backLink = document.createElement('a');
+        backLink.href = 'index.html';
+        backLink.className = 'text-blue-500 hover:text-blue-700 ml-4';
+        backLink.textContent = 'Back to Home';
+        headerContainer.appendChild(backLink);
+      }
+    });
+  </script>
+
+  <script>
+    // Password matching validation
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const passwordError = document.getElementById('passwordError');
+    const registerForm = document.getElementById('registerForm');
+
+    function validatePassword() {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        passwordError.classList.remove('hidden');
+        return false;
+      }
+      passwordError.classList.add('hidden');
+      return true;
+    }
+
+    confirmPasswordInput.addEventListener('input', validatePassword);
+    
+    registerForm.addEventListener('submit', (e) => {
+      if (!validatePassword()) {
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
