@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Therapists | Mindhail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .therapist-card { 
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+    .therapist-card:hover { 
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .specialty-tag {
+      transition: all 0.2s ease;
+    }
+    .specialty-tag:hover {
+      transform: scale(1.05);
+    }
+    .section-title {
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 3rem;
+      height: 3px;
+      background: #3b82f6;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Load Templates -->
+  <script src="template-loader.js"></script>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-600 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-4">Our Therapists</h1>
+      <p class="text-xl max-w-2xl mx-auto">
+        Meet our team of licensed mental health professionals
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+
+    <!-- Single Therapist Profile -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8">Our Therapist</h2>
+      <div class="flex justify-center">
+        <div class="therapist-card bg-white rounded-lg shadow-md overflow-hidden" style="max-width: 500px;">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <img src="https://randomuser.me/api/portraits/women/33.jpg" 
+                   alt="Dr. Priya Sharma" 
+                   class="w-16 h-16 rounded-full object-cover mr-4">
+              <div>
+                <h3 class="font-semibold text-gray-800">Dr. Priya Sharma</h3>
+                <p class="text-sm text-gray-500">MD Psychiatry, AIIMS Delhi</p>
+                <p class="text-sm font-medium text-green-600 mt-1">₹350 per session</p>
+              </div>
+            </div>
+            <div class="mb-4 border-t border-gray-100 pt-4">
+              <h4 class="font-medium text-gray-800 mb-2">Specializations</h4>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="specialty-tag bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Anxiety</span>
+                <span class="specialty-tag bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Depression</span>
+                <span class="specialty-tag bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CBT</span>
+                <span class="specialty-tag bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Trauma</span>
+              </div>
+              <div class="mb-3">
+                <p class="text-gray-600 line-clamp-3 therapist-desc" id="therapist1-desc">
+                  Dr. Priya Sharma is an MD Psychiatrist from AIIMS Delhi with 12 years of experience. She specializes in evidence-based treatments for anxiety and mood disorders, combining medication management with psychotherapy. Fluent in Hindi and English, she provides culturally sensitive care tailored to Indian patients.
+                </p>
+                <button onclick="toggleDescription('therapist1-desc')" 
+                        class="text-blue-600 hover:text-blue-800 text-sm font-medium mt-2 flex items-center">
+                  <i class="fas fa-chevron-down mr-1"></i> Show More
+                </button>
+              </div>
+              <button class="book-btn w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md transition duration-300 flex items-center justify-center mt-4"
+                      data-therapist="priya-sharma">
+                <i class="fas fa-calendar-alt mr-2"></i> Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal (Hidden by default) -->
+    <div id="bookingModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden z-50">
+      <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-gray-800">Book Appointment</h3>
+          <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div id="therapistInfo" class="mb-4 p-4 bg-gray-50 rounded-lg">
+          <div class="flex items-center">
+            <img id="modalTherapistImg" class="w-12 h-12 rounded-full object-cover mr-3">
+            <div>
+              <h4 id="modalTherapistName" class="font-semibold"></h4>
+              <p id="modalTherapistTitle" class="text-sm text-gray-600"></p>
+              <p class="text-sm font-medium text-green-600">₹350 per session (1 hour)</p>
+            </div>
+          </div>
+          <div class="mt-3">
+            <p id="modalTherapistDesc" class="text-sm text-gray-600"></p>
+          </div>
+        </div>
+        
+        <!-- Step 1: Date/Time Selection -->
+        <div id="dateTimeStep">
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800">Select Appointment Time</h3>
+            <p class="text-sm text-gray-600">Choose a date and time for your session</p>
+          </div>
+          <form id="timeSelectionForm">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-gray-700 mb-2" for="appointmentDate">Date</label>
+                <input type="date" id="appointmentDate" min="" 
+                      class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+              </div>
+              <div>
+                <label class="block text-gray-700 mb-2" for="appointmentTime">Time</label>
+                <select id="appointmentTime" 
+                        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                  <option value="">Select time</option>
+                  <option value="09:00">9:00 AM</option>
+                  <option value="10:30">10:30 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="15:30">3:30 PM</option>
+                  <option value="17:00">5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div id="timeSlotError" class="text-red-500 text-sm mb-4 hidden">
+              This time slot is already booked. Please choose another.
+            </div>
+            <button type="button" id="proceedToBooking" 
+                    class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300">
+              Continue to Booking
+            </button>
+          </form>
+        </div>
+        
+        <!-- Step 2: Booking Details -->
+        <div id="detailsStep" class="hidden">
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800">Complete Your Booking</h3>
+            <p class="text-sm text-gray-600">Session scheduled for <span id="selectedDateTime" class="font-medium"></span></p>
+          </div>
+          <form id="bookingDetailsForm">
+            <div class="mb-4">
+              <label class="block text-gray-700 mb-2" for="fullName">Full Name</label>
+              <input type="text" id="fullName" class="w-full border border-gray-300 rounded-md py-2 px-3">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 mb-2" for="age">Age</label>
+              <input type="number" id="age" class="w-full border border-gray-300 rounded-md py-2 px-3">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 mb-2" for="problem">Problem you're facing</label>
+              <textarea id="problem" rows="3" class="w-full border border-gray-300 rounded-md py-2 px-3"></textarea>
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 mb-2" for="duration">Duration of problem</label>
+              <input type="text" id="duration" class="w-full border border-gray-300 rounded-md py-2 px-3">
+            </div>
+            <div class="mb-4 flex items-start">
+              <input type="checkbox" id="terms" class="mt-1 mr-2">
+              <label for="terms" class="text-sm text-gray-700">I agree to the terms & conditions</label>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
+              Confirm Booking
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Profile Modal -->
+  <div id="profileModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold text-gray-800">Therapist Profile</h3>
+        <button id="closeProfileModal" class="text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex-shrink-0">
+          <img id="profileModalImg" class="w-32 h-32 rounded-full object-cover mx-auto">
+        </div>
+        <div>
+          <h4 id="profileModalName" class="text-lg font-semibold"></h4>
+          <p id="profileModalTitle" class="text-gray-600 mb-2"></p>
+          <p class="text-green-600 font-medium mb-4">₹350 per session (1 hour)</p>
+          <div class="space-y-2">
+            <h5 class="font-medium">About</h5>
+            <p id="profileModalDesc" class="text-gray-600"></p>
+          </div>
+          <div class="mt-4">
+            <h5 class="font-medium">Specializations</h5>
+            <div id="profileModalSpecialties" class="flex flex-wrap gap-2 mt-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle description visibility
+    function toggleDescription(id) {
+      const desc = document.getElementById(id);
+      const btn = desc.nextElementSibling;
+      
+      if (!desc || !btn) return;
+      
+      if (desc.classList.contains('line-clamp-3')) {
+        desc.classList.remove('line-clamp-3');
+        btn.innerHTML = '<i class="fas fa-chevron-up mr-1"></i> Show Less';
+      } else {
+        desc.classList.add('line-clamp-3');
+        btn.innerHTML = '<i class="fas fa-chevron-down mr-1"></i> Show More';
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize description
+      const desc = document.getElementById('therapist1-desc');
+      if (desc) {
+        desc.classList.add('line-clamp-3');
+      }
+
+      // Service tab switching
+      document.querySelectorAll('.service-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.service-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+
+      // Booking modal functionality
+      document.querySelectorAll('.book-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const therapist = btn.getAttribute('data-therapist');
+          // In a real app, you would fetch therapist availability here
+          document.getElementById('therapistInfo').innerHTML = `
+            <div class="flex items-center">
+              <img src="${btn.parentElement.querySelector('img').src}" 
+                   class="w-12 h-12 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-semibold">${btn.parentElement.querySelector('h3').textContent}</h4>
+                <p class="text-sm text-gray-600">${btn.parentElement.querySelector('p').textContent}</p>
+              </div>
+            </div>
+          `;
+          document.getElementById('bookingModal').classList.remove('hidden');
+        });
+      });
+
+      document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('bookingModal').classList.add('hidden');
+      });
+
+      document.getElementById('loginToBook').addEventListener('click', () => {
+        window.location.href = 'login.html?redirect=booking';
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener('click', (e) => {
+        if (e.target === document.getElementById('bookingModal')) {
+          document.getElementById('bookingModal').classList.add('hidden');
+        }
+      });
+    }); // End of DOMContentLoaded
+  </script>
+</body>
+</html>
