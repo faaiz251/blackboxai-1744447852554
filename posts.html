@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindhail - Community & Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .post-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Load Templates -->
+  <script src="template-loader.js"></script>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">Mindhail Community</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Educational resources and community discussions about mental health and wellbeing
+      </p>
+    </div>
+
+    <!-- Featured Posts -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold mb-8 text-gray-800 border-b pb-2">Featured Articles</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Post 1 -->
+        <article class="bg-white post-card rounded-lg overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773" alt="Mental Health" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>April 2, 2023</span>
+              <span class="mx-2">•</span>
+              <span>8 min read</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Understanding Anxiety Disorders</h3>
+            <p class="text-gray-600 mb-4">Learn about the different types of anxiety disorders and evidence-based treatment approaches.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="bg-white post-card rounded-lg overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326" alt="Meditation" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>March 25, 2023</span>
+              <span class="mx-2">•</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Mindfulness Meditation Guide</h3>
+            <p class="text-gray-600 mb-4">A beginner's guide to establishing a mindfulness meditation practice for stress reduction.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="bg-white post-card rounded-lg overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e" alt="Workplace" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span>March 18, 2023</span>
+              <span class="mx-2">•</span>
+              <span>10 min read</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Mental Health in the Workplace</h3>
+            <p class="text-gray-600 mb-4">Strategies for creating mentally healthy work environments and supporting employees.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Community Forum -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-8 text-gray-800 border-b pb-2">Community Discussions</h2>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <!-- Discussion 1 -->
+        <div class="p-6 border-b border-gray-100 hover:bg-gray-50">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 mr-4">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-800 mb-1">Coping with Seasonal Depression</h3>
+              <p class="text-gray-600 text-sm mb-2">Started by SarahJ • 24 comments • Last updated 2 days ago</p>
+              <p class="text-gray-600">Looking for advice on managing seasonal affective disorder as we head into winter...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discussion 2 -->
+        <div class="p-6 border-b border-gray-100 hover:bg-gray-50">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 mr-4">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-800 mb-1">Therapist Recommendations in NYC</h3>
+              <p class="text-gray-600 text-sm mb-2">Started by MikeT • 15 comments • Last updated 1 week ago</p>
+              <p class="text-gray-600">Does anyone have recommendations for therapists specializing in anxiety disorders in the New York area?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discussion 3 -->
+        <div class="p-6 hover:bg-gray-50">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 mr-4">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-800 mb-1">Medication Experiences</h3>
+              <p class="text-gray-600 text-sm mb-2">Started by AlexR • 42 comments • Last updated 3 days ago</p>
+              <p class="text-gray-600">Sharing experiences with different medications for depression and anxiety...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Brand Info -->
+        <div>
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">M</div>
+            <span class="ml-2 text-xl font-semibold">Mindhail</span>
+          </div>
+          <p class="text-gray-400">Your mental health partner for a better tomorrow.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-white">Services</a></li>
+            <li><a href="ai-chat.html" class="text-gray-400 hover:text-white">AI Chat</a></li>
+            <li><a href="posts.html" class="text-gray-400 hover:text-white">Community</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">HIPAA Compliance</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="mt-6">
+            <p class="text-gray-400">Subscribe to our newsletter</p>
+            <div class="flex mt-2">
+              <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md text-gray-800">
+              <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r-md">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2023 Mindhail. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
