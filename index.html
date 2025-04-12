@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindhail - Mental Health Platform</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Load Templates -->
+  <script src="template-loader.js"></script>
+
+
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Your Mental Health Journey Starts Here</h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Mindhail connects you with professional therapists and AI-powered tools to support your mental wellbeing.</p>
+      <div class="space-x-4">
+        <a href="#services" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md font-medium transition duration-300">Explore Services</a>
+        <a href="#" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition duration-300">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-user-md text-blue-500 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Professional Therapy</h3>
+          <p class="text-gray-600">Connect with licensed therapists for personalized mental health support.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-robot text-blue-500 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">AI Chat Support</h3>
+          <p class="text-gray-600">24/7 access to our AI mental health assistant for immediate support.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-building text-blue-500 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Corporate Wellness</h3>
+          <p class="text-gray-600">Comprehensive mental health solutions for your organization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">About Mindhail</h2>
+          <p class="text-gray-600 mb-4">Mindhail is a revolutionary mental health platform that combines human expertise with AI technology to provide accessible, affordable mental health support to everyone.</p>
+          <p class="text-gray-600">Our mission is to break down barriers to mental healthcare and create a world where everyone has the tools and support they need to thrive.</p>
+        </div>
+        <div class="md:w-1/2 bg-blue-100 rounded-lg h-64 flex items-center justify-center">
+          <span class="text-gray-500">Mindhail team image</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Our Users Say</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-500 rounded-full"></div>
+            <div class="ml-4">
+              <h4 class="font-medium">Sarah J.</h4>
+              <p class="text-sm text-gray-500">Individual User</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"Mindhail has transformed my mental health journey. The therapists are exceptional and the platform is so easy to use."</p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-500 rounded-full"></div>
+            <div class="ml-4">
+              <h4 class="font-medium">Michael T.</h4>
+              <p class="text-sm text-gray-500">Corporate Admin</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"Implementing Mindhail for our employees has significantly improved workplace wellbeing and productivity."</p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-500 rounded-full"></div>
+            <div class="ml-4">
+              <h4 class="font-medium">Dr. Lisa R.</h4>
+              <p class="text-sm text-gray-500">Therapist</p>
+            </div>
+          </div>
+          <p class="text-gray-600">"The platform makes it easy to connect with clients and provide quality care. The tools are excellent."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Brand Info -->
+        <div>
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">M</div>
+            <span class="ml-2 text-xl font-semibold">Mindhail</span>
+          </div>
+          <p class="text-gray-400">Your mental health partner for a better tomorrow.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-white">Services</a></li>
+            <li><a href="ai-chat.html" class="text-gray-400 hover:text-white">AI Chat</a></li>
+            <li><a href="posts.html" class="text-gray-400 hover:text-white">Community</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">HIPAA Compliance</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="mt-6">
+            <p class="text-gray-400">Subscribe to our newsletter</p>
+            <div class="flex mt-2">
+              <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-md text-gray-800">
+              <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r-md">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2023 Mindhail. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
